@@ -1,0 +1,911 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<title>Home</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<script type="application/x-javascript">
+			addEventListener("load", function() {
+				setTimeout(hideURLbar, 0);
+			}, false);
+
+			function hideURLbar() {
+				window.scrollTo(0, 1);
+			}
+		</script>
+		<link href="css/bootstrap.css" rel='stylesheet' type='text/css' />
+		<link href="css/style.css" rel='stylesheet' type='text/css' />
+		<script src="js/jquery-1.11.0.min.js"></script>
+		<script type="text/javascript" src="js/move-top.js"></script>
+		<script type="text/javascript" src="js/easing.js"></script>
+		<script type="text/javascript">
+			jQuery(document).ready(function($) {
+				$(".scroll").click(function(event) {
+					event.preventDefault();
+					$('html,body').animate({
+						scrollTop: $(this.hash).offset().top
+					}, 1000);
+				});
+			});
+		</script>
+		<!--start-smoth-scrolling-->
+	</head>
+
+	<body>
+		<!--header-->
+		<div class="header-top" id="home">
+			<div class="container">
+				<div class="header-logo">
+					<a href="index.html">
+						<img src="images/logo.png" alt="" width="110" />
+					</a>
+				</div>
+				<div class="top-nav">
+					<span class="menu"><img src="images/menu-icon.png" alt=""/></span>
+					<ul class="nav1">
+						<li><a href="index.html">&nbsp;&nbsp;首&nbsp;&nbsp;页&nbsp;&nbsp;</a>
+						</li>
+						<li><a href="magazine.html">&nbsp;&nbsp;资&nbsp;&nbsp;讯&nbsp;&nbsp;</a>
+						</li>
+						<li><a href="strange-buildings.html">&nbsp;&nbsp;影&nbsp;&nbsp;展&nbsp;&nbsp;</a>
+						</li>
+						<li><a href="404.html">&nbsp;&nbsp;投&nbsp;&nbsp;稿&nbsp;&nbsp;</a>
+						</li>
+						<li><a href="blog.html">&nbsp;&nbsp;视&nbsp;&nbsp;频&nbsp;&nbsp;</a>
+						</li>
+						<li><a href="news.html">&nbsp;&nbsp;活&nbsp;&nbsp;动&nbsp;&nbsp;</a>
+						</li>
+					</ul>
+					<!-- script-for-menu -->
+					<script>
+						$("span.menu").click(function() {
+							$("ul.nav1").slideToggle(300, function() {
+								// Animation complete.
+							});
+						});
+					</script>
+					<!-- /script-for-menu -->
+				</div>
+				<div class="nav-login">
+					<ul id="login_ul">
+						<li><a href="#"><span >登陆 </span></a>
+						</li>
+						<li>|</li>
+						<li><a href="#"><span >注册 </span></a>
+						</li>
+					</ul>
+					<ul id="islogin_ul" class="hidden">
+						<li><a href="#"><span >zhgwegwe </span></a>
+						</li>
+						<li>|</li>
+						<li><a href="#"><span >退出登陆</span></a>
+						</li>
+					</ul>
+
+				</div>
+				<div class="clearfix"> </div>
+				<!--登陆处理的JS-->
+				<script defer="defer" type="text/javascript" src="js/loginfn.js">	</script>
+
+			</div>
+			<div class="header-info-right">
+				<div class="header cbp-spmenu-push">
+					<nav class="cbp-spmenu cbp-spmenu-vertical cbp-spmenu-left" id="cbp-spmenu-s1">
+						<a href="index.html">HOME / 首 页 </a>
+						<a href="magazine.html">NEWS / 资 讯</a>
+						<a href="strange-buildings.html">SHOW / 影 展</a>
+						<a href="404.html">VIDEO / 视 频</a>
+						<a href="blog.html">ACTIVITY / 活 动 </a>
+						<a href="news.html">JOIN / 投 稿 </a>
+					</nav>
+					<!--script-nav -->
+					<script>
+						$("span.menu").click(function() {
+							$("ul.navigatoin").slideToggle("300", function() {});
+						});
+					</script>
+					<script type="text/javascript">
+						jQuery(document).ready(function($) {
+							$(".scroll").click(function(event) {
+								event.preventDefault();
+								$('html,body').animate({
+									scrollTop: $(this.hash).offset().top
+								}, 1000);
+							});
+						});
+					</script>
+					<div class="clearfix"> </div>
+					<!-- /script-nav -->
+					<div class="main">
+						<section class="buttonset">
+							<button id="showLeftPush">
+								<img src="images/menu.png" /><span>Menu</span>
+							</button>
+						</section>
+					</div>
+					<!-- Classie - class helper functions by @desandro https://github.com/desandro/classie -->
+					<script src="js/classie.js"></script>
+					<script>
+						var menuLeft = document.getElementById('cbp-spmenu-s1'),
+							showLeftPush = document.getElementById('showLeftPush'),
+							body = document.body;
+						showLeftPush.onclick = function() {
+							classie.toggle(this, 'active');
+							classie.toggle(body, 'cbp-spmenu-push-toright');
+							classie.toggle(menuLeft, 'cbp-spmenu-open');
+							disableOther('showLeftPush');
+						};
+					</script>
+				</div>
+			</div>
+		</div>
+		<!--login-->
+		<script type="text/javascript" src="js/bootstrapValidator.js"></script>
+		<div class="r-l-box hidden">
+			<div class="register-box " >
+				<div class="blank-30"></div>
+				<form class="form-horizontal" method="post" id="registerForm" action="#">
+					<div class="form-group">
+						<label for="inputPassword3" class="col-sm-3 control-label">昵称</label>
+						<div class="col-sm-8">
+							<input type="text" name="nickname" class="form-control">
+						</div>
+					</div>
+					<div class="form-group">
+						<label for="inputPassword3" class="col-sm-3 control-label">用户名</label>
+						<div class="col-sm-8">
+							<input type="text" name="username" class="form-control">
+						</div>
+					</div>
+					<div class="form-group">
+						<label for="inputPassword3" class="col-sm-3 control-label">密码</label>
+						<div class="col-sm-8">
+							<input type="password" name="password" class="form-control">
+						</div>
+					</div>
+					<div class="form-group">
+						<label for="inputPassword3" class="col-sm-3 control-label" style="white-space: nowrap;">确认密码</label>
+						<div class="col-sm-8">
+							<input type="password" name="confirmPassword" class="form-control">
+						</div>
+					</div>
+
+					<div class="form-group">
+						<div class="col-sm-offset-4 col-sm-8">
+							<button type="submit" name="register" class="btn btn-default">&nbsp;&nbsp;注&nbsp;&nbsp;册&nbsp;&nbsp;</button>
+
+						</div>
+					</div>
+				</form>
+			</div>
+			<div class="login-box">
+				<div class="blank-30"></div>
+				<form class="form-horizontal" method="post" id="loginForm" action="#">
+					<div class="form-group">
+						<label for="inputPassword3" class="col-sm-3 control-label">用户名</label>
+						<div class="col-sm-8">
+							<input type="text" name="username" class="form-control">
+						</div>
+					</div>
+					<div class="form-group">
+						<label for="inputPassword3" class="col-sm-3 control-label">密码</label>
+						<div class="col-sm-8">
+							<input type="password" name="password" class="form-control">
+						</div>
+					</div>
+
+					<div class="form-group">
+						<div class="col-sm-offset-4 col-sm-8">
+							<button type="submit" name="register" class="btn btn-default">&nbsp;&nbsp;登&nbsp;&nbsp;陆&nbsp;&nbsp;</button>
+
+						</div>
+					</div>
+				</form>
+			</div>
+		</div>
+
+		<script type="text/javascript">
+			$(document).ready(function() {
+				$('#registerForm').bootstrapValidator({
+					fields: {
+						nickname: {
+							validators: {
+								notEmpty: {
+									message: '昵称不能为空'
+								},
+								stringLength: {
+									min: 6,
+									max: 20,
+									message: '昵称长度保持在6-20'
+								},
+								regexp: {
+									regexp: /[\u4e00-\u9fa5a-zA-Z0-9]+$/,
+									message: "昵称不能包含特殊字符"
+								},
+							}
+						},
+						username: {
+							message: '用户名无效',
+							validators: {
+								notEmpty: {
+									message: '用户名不能为空'
+								},
+								stringLength: {
+									min: 6,
+									max: 20,
+									message: '用户名长度保持在6-20'
+								},
+								regexp: {
+									regexp: /^[a-zA-Z0-9]+$/,
+									message: "用户名只能是字母和数字"
+								},
+								remote: {
+									url: 'remote.php',
+									message: 'The username is not available'
+								}
+							}
+						},
+						password: {
+							validators: {
+								notEmpty: {
+									message: '密码不能为空'
+								},
+							}
+						},
+						confirmPassword: {
+							validators: {
+								notEmpty: {},
+								identical: {
+									field: 'password',
+									message: '请保持密码一致'
+								}
+							}
+						}
+					}
+				});
+				
+			});
+		</script>
+		<!--//login-->
+
+		<!--//header-->
+		<!--search-scripts-->
+		<script src="js/classie.js"></script>
+
+		<!--//search-scripts-->
+		<!--banner-->
+		<div class="copyrights">Collect from <a href="http://www.cssmoban.com/">免费模板</a>
+		</div>
+		<div class="banner">
+			<div class="container">
+				<div class="banner-top">
+					<h1>WELCOME TO JOIN CHINA PHOTOGRAPHY CIRCLE</h1>
+					<ul>
+						<li><a class="art" href="#"> Immediately send / 立即投稿</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<!--banner-->
+		<!--slide-->
+		<div class="gallery-cursual">
+			<!-- requried-jsfiles-for owl -->
+			<link href="css/owl.carousel.css" rel="stylesheet">
+			<script>
+				$(document).ready(function() {
+					$("#owl-demo").owlCarousel({
+						items: 5,
+						lazyLoad: true,
+						autoPlay: true,
+						pagination: false,
+					});
+				});
+			</script>
+			<!-- //requried-jsfiles-for owl -->
+			<!-- start content_slider -->
+			<div id="owl-demo" class="owl-carousel text-center">
+				<div class="item g1 popup-with-zoom-anim" href="#small-dialog">
+					<img class="lazyOwl" data-src="images/slide-1.jpg" alt="name">
+					<div class="caption">
+						<h3>省摄协主席徐渊名分享霞浦快乐行</h3>
+						<div class="s-btn">
+							<a href="#">SHOW</a>
+						</div>
+					</div>
+				</div>
+				<div class="item g1 popup-with-zoom-anim" href="#small-dialog1">
+					<img class="lazyOwl" data-src="images/slide-2.jpg" alt="name">
+					<div class="caption">
+						<h3>省摄协主席徐渊名分享霞浦快乐行1</h3>
+						<div class="s-btn">
+							<a href="#">SHOW</a>
+						</div>
+					</div>
+				</div>
+				<div class="item g1 popup-with-zoom-anim" href="#small-dialog2">
+					<img class="lazyOwl" data-src="images/slide-3.jpg" alt="name">
+					<div class="caption">
+						<h3>省摄协主席徐渊名分享霞浦快乐行2</h3>
+						<div class="s-btn">
+							<a href="#">SHOW</a>
+						</div>
+					</div>
+				</div>
+				<div class="item g1 popup-with-zoom-anim" href="#small-dialog3">
+					<img class="lazyOwl" data-src="images/slide-4.jpg" alt="name">
+					<div class="caption">
+						<h3>省摄协主席徐渊名分享霞浦快乐行3</h3>
+						<div class="s-btn">
+							<a href="#">SHOW</a>
+						</div>
+					</div>
+				</div>
+				<div class="item g1 popup-with-zoom-anim" href="#small-dialog4">
+					<img class="lazyOwl" data-src="images/slide-5.jpg" alt="name">
+					<div class="caption">
+						<h3>省摄协主席徐渊名分享霞浦快乐行4</h3>
+						<div class="s-btn">
+							<a href="#">SHOW</a>
+						</div>
+					</div>
+				</div>
+				<div class="item g1 popup-with-zoom-anim" href="#small-dialog5">
+					<img class="lazyOwl" data-src="images/slide-6.jpg" alt="name">
+					<div class="caption">
+						<h3>省摄协主席徐渊名分享霞浦快乐行5</h3>
+						<div class="s-btn">
+							<a href="#">SHOW</a>
+						</div>
+					</div>
+				</div>
+
+			</div>
+			<!--//sreen-gallery-cursual---->
+			<!-- caption-popup -->
+			<div class="caption-popup">
+				<div id="small-dialog" class="mfp-hide innercontent">
+					<h4>省摄协主席徐渊名分享霞浦快乐行</h4>
+					<div class="caption-popup_vido_box">
+						<iframe height=498 width=510 src="http://player.youku.com/embed/XMTI3ODA0ODk2MA==" frameborder=0 allowfullscreen></iframe>
+					</div>
+				</div>
+			</div>
+			<div class="caption-popup">
+				<div id="small-dialog1" class="mfp-hide innercontent">
+					<h4>省摄协主席徐渊名分享霞浦快乐行1</h4>
+					<div class="caption-popup_vido_box">
+						<iframe height=498 width=510 src="http://player.youku.com/embed/XMTI4MDg1ODQ4NA==" frameborder=0 allowfullscreen></iframe>
+					</div>
+				</div>
+			</div>
+			<div class="caption-popup">
+				<div id="small-dialog2" class="mfp-hide innercontent">
+					<h4>省摄协主席徐渊名分享霞浦快乐行2</h4>
+					<div class="caption-popup_vido_box">
+						<iframe height=498 width=510 src="http://player.youku.com/embed/XMTI4MDg1ODQ4NA==" frameborder=0 allowfullscreen></iframe>
+					</div>
+				</div>
+			</div>
+			<div class="caption-popup">
+				<div id="small-dialog3" class="mfp-hide innercontent">
+					<h4>省摄协主席徐渊名分享霞浦快乐行3</h4>
+					<div class="caption-popup_vido_box">
+						<iframe height=498 width=510 src="http://player.youku.com/embed/XMTI4MDg1ODQ4NA==" frameborder=0 allowfullscreen></iframe>
+					</div>
+				</div>
+			</div>
+			<div class="caption-popup">
+				<div id="small-dialog4" class="mfp-hide innercontent">
+					<h4>省摄协主席徐渊名分享霞浦快乐行4</h4>
+					<div class="caption-popup_vido_box">
+						<iframe height=498 width=510 src="http://player.youku.com/embed/XMTI4MDg1ODQ4NA==" frameborder=0 allowfullscreen></iframe>
+					</div>
+				</div>
+			</div>
+			<div class="caption-popup">
+				<div id="small-dialog5" class="mfp-hide innercontent">
+					<h4>省摄协主席徐渊名分享霞浦快乐行5</h4>
+					<div class="caption-popup_vido_box">
+						<iframe height=498 width=510 src="http://player.youku.com/embed/XMTI4MDg1ODQ4NA==" frameborder=0 allowfullscreen></iframe>
+					</div>
+				</div>
+			</div>
+			<div class="caption-popup">
+				<div id="small-dialog6" class="mfp-hide innercontent">
+					<h4>省摄协主席徐渊名分享霞浦快乐行6</h4>
+					<div class="caption-popup_vido_box">
+						<iframe height=498 width=510 src="http://player.youku.com/embed/XMTI4MDg1ODQ4NA==" frameborder=0 allowfullscreen></iframe>
+					</div>
+				</div>
+			</div>
+			<!----//fea-video---->
+			<script>
+				$(document).ready(function() {
+					$('.popup-with-zoom-anim').magnificPopup({
+						type: 'inline',
+						fixedContentPos: false,
+						fixedBgPos: true,
+						overflowY: 'auto',
+						closeBtnInside: true,
+						preloader: false,
+						midClick: true,
+						removalDelay: 300,
+						mainClass: 'my-mfp-zoom-in'
+					});
+				});
+			</script>
+		</div>
+		<!-- /caption-popup -->
+		<!---pop-up-box---->
+		<link href="css/popuo-box.css" rel="stylesheet" type="text/css" media="all" />
+		<script src="js/jquery.magnific-popup.js" type="text/javascript"></script>
+		<script src="js/owl.carousel.js"></script>
+		<!---//pop-up-box---->
+		<!--slide-->
+		<!--address-->
+		<div class="address">
+			<div class="container">
+				<div class="address-top">
+					<a href="#" class="hvr-shutter-out-horizontal">关注更多精彩视频分享</a>
+				</div>
+			</div>
+		</div>
+		<!--address-->
+		<!--articles-->
+		<div class="articles">
+			<div class="container">
+				<div class="articles-top">
+					<div class="col-md-4 articles-left">
+						<div class="art-one sponser">
+							<a href="single.html">
+								<img src="images/art-1.jpg" alt="" />
+							</a>
+							<div class="art-btm">
+								<a href="single.html"><h3>王元清在故宫作品集</h3></a>
+								<p>此作品为大师隔壁王先生在闲暇之余的成功大作，被誉为隔壁老外之最，享誉还内容，巅峰之作无人能比。</p>
+								<h6>HOT</h6>
+							</div>
+						</div>
+						<div class="art-one sponser">
+							<a href="single.html">
+								<img src="images/art-3.jpg" alt="" />
+							</a>
+							<div class="art-btm">
+								<a href="single.html"><h3>隔壁刘先生在日本富士山作品集</h3></a>
+								<p>比喻为隔壁老王第二的隔壁刘先生带着隔壁老王的太太隔壁李太太去日本富士山所留</p>
+
+								<h6>HOT</h6>
+							</div>
+						</div>
+						<div class="art-one">
+							<a href="single.html">
+								<img src="images/art-5.jpg" alt="" />
+							</a>
+							<div class="art-btm">
+								<a href="single.html"><h3>王元清在故宫作品集</h3></a>
+								<p>此作品为大师隔壁王先生在闲暇之余的成功大作，被誉为隔壁老外之最，享誉还内容，巅峰之作无人能比。</p>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-4 articles-left">
+						<div class="art-one">
+							<a href="single.html">
+								<img src="images/art-2.jpg" alt="" />
+							</a>
+							<div class="art-btm">
+								<a href="single.html"><h3>王元清在故宫作品集</h3></a>
+								<p>此作品为大师隔壁王先生在闲暇之余的成功大作，被誉为隔壁老外之最，享誉还内容，巅峰之作无人能比。</p>
+							</div>
+						</div>
+						<div class="art-one">
+							<a href="single.html">
+								<img src="images/art-4.jpg" alt="" />
+							</a>
+							<div class="art-btm">
+								<a href="single.html"><h3>王元清在故宫作品集</h3></a>
+								<p>此作品为大师隔壁王先生在闲暇之余的成功大作，被誉为隔壁老外之最，享誉还内容，巅峰之作无人能比。</p>
+							</div>
+						</div>
+						<div class="art-one">
+							<a href="single.html">
+								<img src="images/art-1.jpg" alt="" />
+							</a>
+							<div class="art-btm">
+								<a href="single.html"><h3>王元清在故宫作品集</h3></a>
+								<p>此作品为大师隔壁王先生在闲暇之余的成功大作，被誉为隔壁老外之最，享誉还内容，巅峰之作无人能比。</p>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-4 articles-left">
+						<h4><a href="#" class="articles-left-h4-a"> WONDERFUL / 精彩投稿 </a></h4>
+						<div class="week">
+							<div class="col-md-6 week-left">
+								<div class="portfolio app mix_all" data-cat="app" style="display: inline-block; opacity: 1;">
+									<div class="portfolio-wrapper">
+										<a href="images/week-1.jpg" class="b-link-stripe b-animate-go   swipebox" title="Image Title">
+											<img src="images/week-1.jpg" />
+											<div class="b-wrapper">
+												<h2 class="b-animate b-from-left  b-delay03 ">
+								     	           <span></span>
+								     	        </h2>
+											</div>
+										</a>
+									</div>
+								</div>
+							</div>
+							<div class="col-md-6 week-left">
+								<div class="portfolio app mix_all" data-cat="app" style="display: inline-block; opacity: 1;">
+									<div class="portfolio-wrapper">
+										<a href="images/week-2.jpg" class="b-link-stripe b-animate-go   swipebox" title="Image Title">
+											<img src="images/week-2.jpg" />
+											<div class="b-wrapper">
+												<h2 class="b-animate b-from-left    b-delay03 ">
+								     	         <span></span>
+								     	        </h2>
+											</div>
+										</a>
+									</div>
+								</div>
+							</div>
+							<div class="clearfix"></div>
+							<div class="week-btm">
+								<div class="col-md-4 week-btm-left">
+									<div class="portfolio app mix_all" data-cat="app" style="display: inline-block; opacity: 1;">
+										<div class="portfolio-wrapper">
+											<a href="images/week-3.jpg" class="b-link-stripe b-animate-go   swipebox" title="Image Title">
+												<img src="images/week-3.jpg" />
+												<div class="b-wrapper">
+													<h2 class="b-animate b-from-left    b-delay03 ">
+
+								     	<span class="one"></span>
+
+								     	</h2>
+												</div>
+											</a>
+										</div>
+									</div>
+								</div>
+								<div class="col-md-4 week-btm-left">
+									<div class="portfolio app mix_all" data-cat="app" style="display: inline-block; opacity: 1;">
+										<div class="portfolio-wrapper">
+											<a href="images/week-4.jpg" class="b-link-stripe b-animate-go   swipebox" title="Image Title">
+												<img src="images/week-4.jpg" />
+												<div class="b-wrapper">
+													<h2 class="b-animate b-from-left    b-delay03 ">
+								     	            <span class="one"></span>
+								                 	</h2>
+												</div>
+											</a>
+										</div>
+									</div>
+								</div>
+								<div class="col-md-4 week-btm-left">
+									<div class="portfolio app mix_all" data-cat="app" style="display: inline-block; opacity: 1;">
+										<div class="portfolio-wrapper">
+											<a href="images/week-5.jpg" class="b-link-stripe b-animate-go   swipebox" title="Image Title">
+												<img src="images/week-5.jpg" />
+												<div class="b-wrapper">
+													<h2 class="b-animate b-from-left    b-delay03 ">
+								     	             <span class="one"></span>
+								     	            </h2>
+												</div>
+											</a>
+										</div>
+									</div>
+								</div>
+								<div class="clearfix"></div>
+							</div>
+							<div class="week-btm">
+								<div class="col-md-4 week-btm-left">
+									<div class="portfolio app mix_all" data-cat="app" style="display: inline-block; opacity: 1;">
+										<div class="portfolio-wrapper">
+											<a href="images/week-6.jpg" class="b-link-stripe b-animate-go   swipebox" title="Image Title">
+												<img src="images/week-6.jpg" />
+												<div class="b-wrapper">
+													<h2 class="b-animate b-from-left    b-delay03 ">
+								     	              <span class="one"></span>
+								     	            </h2>
+												</div>
+											</a>
+										</div>
+									</div>
+								</div>
+								<div class="col-md-4 week-btm-left">
+									<div class="portfolio app mix_all" data-cat="app" style="display: inline-block; opacity: 1;">
+										<div class="portfolio-wrapper">
+											<a href="images/week-7.jpg" class="b-link-stripe b-animate-go   swipebox" title="Image Title">
+												<img src="images/week-7.jpg" />
+												<div class="b-wrapper">
+													<h2 class="b-animate b-from-left    b-delay03 ">
+								     	             <span class="one"></span>
+								     	            </h2>
+												</div>
+											</a>
+										</div>
+									</div>
+								</div>
+								<div class="col-md-4 week-btm-left">
+									<div class="portfolio app mix_all" data-cat="app" style="display: inline-block; opacity: 1;">
+										<div class="portfolio-wrapper">
+											<a href="images/week-8.jpg" class="b-link-stripe b-animate-go   swipebox" title="Image Title">
+												<img src="images/week-8.jpg" />
+												<div class="b-wrapper">
+													<h2 class="b-animate b-from-left    b-delay03 ">
+								     	             <span class="one"></span>
+								     	            </h2>
+												</div>
+											</a>
+										</div>
+									</div>
+								</div>
+								<div class="clearfix"></div>
+							</div>
+							<div class="week-btm">
+								<div class="col-md-4 week-btm-left">
+									<div class="portfolio app mix_all" data-cat="app" style="display: inline-block; opacity: 1;">
+										<div class="portfolio-wrapper">
+											<a href="images/week-9.jpg" class="b-link-stripe b-animate-go   swipebox" title="Image Title">
+												<img src="images/week-9.jpg" />
+												<div class="b-wrapper">
+													<h2 class="b-animate b-from-left    b-delay03 ">
+								     	            <span class="one"></span>
+								     	            </h2>
+												</div>
+											</a>
+										</div>
+									</div>
+								</div>
+								<div class="col-md-4 week-btm-left">
+									<div class="portfolio app mix_all" data-cat="app" style="display: inline-block; opacity: 1;">
+										<div class="portfolio-wrapper">
+											<a href="images/week-10.jpg" class="b-link-stripe b-animate-go   swipebox" title="Image Title">
+												<img src="images/week-10.jpg" />
+												<div class="b-wrapper">
+													<h2 class="b-animate b-from-left    b-delay03 ">
+								     	              <span class="one"></span>
+								     	            </h2>
+												</div>
+											</a>
+										</div>
+									</div>
+								</div>
+								<div class="col-md-4 week-btm-left">
+									<div class="portfolio app mix_all" data-cat="app" style="display: inline-block; opacity: 1;">
+										<div class="portfolio-wrapper">
+											<a href="images/week-11.jpg" class="b-link-stripe b-animate-go   swipebox" title="Image Title">
+												<img src="images/week-11.jpg" />
+												<div class="b-wrapper">
+													<h2 class="b-animate b-from-left    b-delay03 ">
+								     	              <span class="one"></span>
+								     	             </h2>
+												</div>
+											</a>
+										</div>
+									</div>
+								</div>
+								<div class="clearfix"></div>
+							</div>
+							<div class="art-one">
+								<a href="single.html">
+									<img src="images/week-12.jpg" alt="" />
+								</a>
+								<div class="art-btm">
+									<a href="single.html"><h3>王元清在故宫作品集</h3></a>
+									<p>此作品为大师隔壁王先生在闲暇之余的成功大作，被誉为隔壁老外之最，享誉还内容，巅峰之作无人能比。</p>
+								</div>
+							</div>
+							<div class="art-one">
+								<a href="single.html">
+									<img src="images/week-13.jpg" alt="" />
+								</a>
+								<div class="art-btm">
+									<a href="single.html"><h3>王元清在故宫作品集</h3></a>
+									<p>此作品为大师隔壁王先生在闲暇之余的成功大作，被誉为隔壁老外之最，享誉还内容，巅峰之作无人能比。</p>
+								</div>
+							</div>
+						</div>
+						<div class="clearfix"></div>
+					</div>
+					<div class="clearfix"></div>
+					<div class="load">
+						<a href="#" class="hvr-shutter-out-horizontal">更多影集展示</a>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!--articles-->
+		<link rel="stylesheet" href="css/swipebox.css">
+		<script src="js/jquery.swipebox.min.js"></script>
+		<script type="text/javascript">
+			jQuery(function($) {
+				$(".swipebox").swipebox();
+			});
+		</script>
+		<!-- Portfolio Ends Here -->
+		<script type="text/javascript" src="js/jquery.mixitup.min.js"></script>
+		<script type="text/javascript">
+			$(function() {
+				var filterList = {
+					init: function() {
+						// MixItUp plugin
+						// http://mixitup.io
+						$('#portfoliolist').mixitup({
+							targetSelector: '.portfolio',
+							filterSelector: '.filter',
+							effects: ['fade'],
+							easing: 'snap',
+							// call the hover effect
+							onMixEnd: filterList.hoverEffect()
+						});
+					},
+					hoverEffect: function() {
+						// Simple parallax effect
+						$('#portfoliolist .portfolio').hover(
+							function() {
+								$(this).find('.label').stop().animate({
+									bottom: 0
+								}, 200, 'easeOutQuad');
+								$(this).find('img').stop().animate({
+									top: -30
+								}, 500, 'easeOutQuad');
+							},
+							function() {
+								$(this).find('.label').stop().animate({
+									bottom: -40
+								}, 200, 'easeInQuad');
+								$(this).find('img').stop().animate({
+									top: 0
+								}, 300, 'easeOutQuad');
+							}
+						);
+					}
+				};
+				// Run the show!
+				filterList.init();
+			});
+		</script>
+		<!--advertisement-->
+		<div class="add">
+			<div class="container">
+				<div class="add-top">
+					<div class="col-md-12 add-left">
+						<img src="images/gg.jpg" width="100%">
+					</div>
+
+					<div class="clearfix"></div>
+				</div>
+			</div>
+		</div>
+		<!--advertisement-->
+		<!--read-->
+		<div class="read">
+			<div class="container">
+				<div class="read-main">
+					<div class="col-md-5 read-left">
+						<h3><a href="#" class="h3-a">NEWS / 资讯</a></h3>
+						<div class="read-btm">
+							<div class="col-md-12 rd-left">
+								<ul>
+									<li><a href="index.html">陈冠希先生再次席卷全球称霸摄影界</a>
+										<span>09/10</span>
+									</li>
+									<li><a href="#">陈冠希先生携手张柏芝再次席卷全球称霸摄影界</a>
+										<span>09/10</span>
+									</li>
+									<li><a href="index.html">陈冠希先生再次席卷全球称霸摄影界</a>
+										<span>09/10</span>
+									</li>
+									<li><a href="#">陈冠希携手张柏芝再次席卷全球称霸摄影界</a>
+										<span>09/10</span>
+									</li>
+									<li><a href="index.html">陈冠希先生再次席卷全球称霸摄影界</a>
+										<span>09/10</span>
+									</li>
+									<li><a href="#">陈冠希携手张柏芝再次席卷全球称霸摄影界</a>
+										<span>09/10</span>
+									</li>
+									<li><a href="index.html">陈冠希先生再次席卷全球称霸摄影界</a>
+										<span>09/10</span>
+									</li>
+									<li><a href="#">陈冠希携手张柏芝再次席卷全球称霸摄影界</a>
+										<span>09/10</span>
+									</li>
+								</ul>
+							</div>
+							<div class="clearfix"></div>
+						</div>
+					</div>
+					<div class="col-md-5 read-left">
+						<h3><a href="#" class="h3-a">ACTIVITY / 活动</a></h3>
+						<div class="read-btm">
+							<div class="read-one">
+								<div class="col-md-3 read-bottom-left">
+									<a href="#">
+										<img src="images/read-1.jpg" alt="" />
+									</a>
+								</div>
+								<div class="col-md-9 read-bottom-right">
+									<h4><a href="#">中国北京香山摄影大赛开始</a></h4>
+									<p> 活动时间8月-12月第一名获得人民币250元第二名奖励人民币300元</p>
+									<time class="bottom-time">2015-10-01</time>
+								</div>
+								<div class="clearfix"></div>
+							</div>
+							<div class="read-one">
+								<div class="col-md-3 read-bottom-left">
+									<a href="#">
+										<img src="images/read-1.jpg" alt="" />
+									</a>
+								</div>
+								<div class="col-md-9 read-bottom-right">
+									<h4><a href="#">中国北京香山摄影大赛开始</a></h4>
+									<p> 活动时间8月-12月第一名获得人民币250元第二名奖励人民币300元</p>
+									<time class="bottom-time">2015-10-01</time>
+								</div>
+								<div class="clearfix"></div>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-2 read-left">
+						<h3><a  class="h3-a">SHARE / 分享</a></h3>
+						<div class="read-btm share-box ">
+							<a id="fx-kj" class="jiathis_button_qzone">&nbsp;&nbsp;&nbsp;&nbsp;分享到空间</a>
+							<a id="fx-weixin" class="jiathis_button_weixin">&nbsp;&nbsp;&nbsp;&nbsp;分享到微信</a>
+							<a id="fx-tsina" class="jiathis_button_tsina">&nbsp;&nbsp;&nbsp;&nbsp;分享到微博</a>
+							<a id="fx-douban" class="jiathis_button_douban">&nbsp;&nbsp;&nbsp;&nbsp;分享到豆瓣</a>
+						</div>
+					</div>
+					<div class="clearfix"></div>
+				</div>
+			</div>
+		</div>
+		<script type="text/javascript">
+			 //			$('#fx-kj').click(function(){
+			 ////				console.log(	$('.jiathis_button_qzone'))
+			 //				$('.jiathis_button_qzone')[0].onclick
+			 //			})
+		</script>
+		<!--read-->
+		<!--footer-->
+		<div class="footer">
+			<div class="container">
+				<div class="footer-top">
+					<div class="col-md-6 footer-left">
+						<p> 
+							中国摄影圈汇集国内知名摄影爱好者是摄影爱好者的天堂
+						</p>
+					</div>
+					<div class="col-md-6 footer-right">
+						<a href="index.html">
+							<img src="images/logo.png" width="80" alt="" />
+						</a>
+					</div>
+					<div class="clearfix"></div>
+				</div>
+			</div>
+			<script type="text/javascript">
+				$(document).ready(function() {
+					/*
+										var defaults = {
+								  			containerID: 'toTop', // fading element id
+											containerHoverID: 'toTopHover', // fading element hover id
+											scrollSpeed: 1200,
+											easingType: 'linear' 
+								 		};
+										*/
+					$().UItoTop({
+						easingType: 'easeOutQuart'
+					});
+				});
+			</script>
+			<a href="#home" id="toTop" class="scroll" style="display: block;"> <span id="toTopHover" style="opacity: 1;"> </span>
+			</a>
+		</div>
+		<!--footer-->
+		<!-- JiaThis Button BEGIN -->
+		<script type="text/javascript" defer="defer" src="http://v3.jiathis.com/code/jia.js" charset="utf-8"></script>
+		<!-- JiaThis Button END -->
+
+</html>

@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<title>Single</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<meta name="keywords" content="" />
+		<script type="application/x-javascript">
+			addEventListener("load", function() {
+				setTimeout(hideURLbar, 0);
+			}, false);
+
+			function hideURLbar() {
+				window.scrollTo(0, 1);
+			}
+		</script>
+		<link href="css/bootstrap.css" rel='stylesheet' type='text/css' />
+		<link href="css/style.css" rel='stylesheet' type='text/css' />
+		<script src="js/jquery-1.11.0.min.js"></script>
+		<link href='http://fonts.useso.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+		<!---- start-smoth-scrolling---->
+		<script type="text/javascript" src="js/move-top.js"></script>
+		<script type="text/javascript" src="js/easing.js"></script>
+		
+		<script type="text/javascript">
+			jQuery(document).ready(function($) {
+				$(".scroll").click(function(event) {
+					event.preventDefault();
+					$('html,body').animate({
+						scrollTop: $(this.hash).offset().top
+					}, 1000);
+				});
+			});
+		</script>
+		<!--start-smoth-scrolling-->
+	</head>
+
+	<body>
+			<!--header-->
+		<div class="header-top" id="home">
+			<div class="container">
+				<div class="header-logo">
+					<a href="index.html">
+						<img src="images/logo.png" alt="" width="110" />
+					</a>
+				</div>
+				<div class="top-nav">
+					<span class="menu"><img src="images/menu-icon.png" alt=""/></span>
+					<ul class="nav1">
+						<li><a href="index.html">&nbsp;&nbsp;首&nbsp;&nbsp;页&nbsp;&nbsp;</a>
+						</li>
+						<li><a href="magazine.html">&nbsp;&nbsp;资&nbsp;&nbsp;讯&nbsp;&nbsp;</a>
+						</li>
+						<li><a href="strange-buildings.html">&nbsp;&nbsp;影&nbsp;&nbsp;展&nbsp;&nbsp;</a>
+						</li>
+						<li><a href="404.html">&nbsp;&nbsp;投&nbsp;&nbsp;稿&nbsp;&nbsp;</a>
+						</li>
+						<li><a href="blog.html">&nbsp;&nbsp;视&nbsp;&nbsp;频&nbsp;&nbsp;</a>
+						</li>
+						<li><a href="news.html">&nbsp;&nbsp;活&nbsp;&nbsp;动&nbsp;&nbsp;</a>
+						</li>
+					</ul>
+					<!-- script-for-menu -->
+					<script>
+						$("span.menu").click(function() {
+							$("ul.nav1").slideToggle(300, function() {
+								// Animation complete.
+							});
+						});
+					</script>
+					<!-- /script-for-menu -->
+				</div>
+				<div class="nav-login">
+					<ul id="login_ul">
+						<li><a href="#"><span >登陆 </span></a>
+						</li>
+						<li>|</li>
+						<li><a href="#"><span >注册 </span></a>
+						</li>
+					</ul>
+					<ul id="islogin_ul" class="hidden">
+						<li><a href="#"><span >zhgwegwe </span></a>
+						</li>
+						<li>|</li>
+						<li><a href="#"><span >退出登陆</span></a>
+						</li>
+					</ul>
+
+				</div>
+				<div class="clearfix"> </div>
+				<!--登陆处理的JS-->
+				<script defer="defer" type="text/javascript" src="js/loginfn.js">	</script>
+
+			</div>
+			<div class="header-info-right">
+				<div class="header cbp-spmenu-push">
+					<nav class="cbp-spmenu cbp-spmenu-vertical cbp-spmenu-left" id="cbp-spmenu-s1">
+						<a href="index.html">HOME / 首 页 </a>
+						<a href="magazine.html">NEWS / 资 讯</a>
+						<a href="strange-buildings.html">SHOW / 影 展</a>
+						<a href="404.html">VIDEO / 视 频</a>
+						<a href="blog.html">ACTIVITY / 活 动 </a>
+						<a href="news.html">JOIN / 投 稿 </a>
+					</nav>
+					<!--script-nav -->
+					<script>
+						$("span.menu").click(function() {
+							$("ul.navigatoin").slideToggle("300", function() {});
+						});
+					</script>
+					<script type="text/javascript">
+						jQuery(document).ready(function($) {
+							$(".scroll").click(function(event) {
+								event.preventDefault();
+								$('html,body').animate({
+									scrollTop: $(this.hash).offset().top
+								}, 1000);
+							});
+						});
+					</script>
+					<div class="clearfix"> </div>
+					<!-- /script-nav -->
+					<div class="main">
+						<section class="buttonset">
+							<button id="showLeftPush">
+								<img src="images/menu.png" /><span>Menu</span>
+							</button>
+						</section>
+					</div>
+					<!-- Classie - class helper functions by @desandro https://github.com/desandro/classie -->
+					<script src="js/classie.js"></script>
+					<script>
+						var menuLeft = document.getElementById('cbp-spmenu-s1'),
+							showLeftPush = document.getElementById('showLeftPush'),
+							body = document.body;
+						showLeftPush.onclick = function() {
+							classie.toggle(this, 'active');
+							classie.toggle(body, 'cbp-spmenu-push-toright');
+							classie.toggle(menuLeft, 'cbp-spmenu-open');
+							disableOther('showLeftPush');
+						};
+					</script>
+				</div>
+			</div>
+		</div>
+		<!--login-->
+		<script type="text/javascript" src="js/bootstrapValidator.js"></script>
+		<div class="r-l-box hidden">
+			<div class="register-box " >
+				<div class="blank-30"></div>
+				<form class="form-horizontal" method="post" id="registerForm" action="#">
+					<div class="form-group">
+						<label for="inputPassword3" class="col-sm-3 control-label">昵称</label>
+						<div class="col-sm-8">
+							<input type="text" name="nickname" class="form-control">
+						</div>
+					</div>
+					<div class="form-group">
+						<label for="inputPassword3" class="col-sm-3 control-label">用户名</label>
+						<div class="col-sm-8">
+							<input type="text" name="username" class="form-control">
+						</div>
+					</div>
+					<div class="form-group">
+						<label for="inputPassword3" class="col-sm-3 control-label">密码</label>
+						<div class="col-sm-8">
+							<input type="password" name="password" class="form-control">
+						</div>
+					</div>
+					<div class="form-group">
+						<label for="inputPassword3" class="col-sm-3 control-label" style="white-space: nowrap;">确认密码</label>
+						<div class="col-sm-8">
+							<input type="password" name="confirmPassword" class="form-control">
+						</div>
+					</div>
+
+					<div class="form-group">
+						<div class="col-sm-offset-4 col-sm-8">
+							<button type="submit" name="register" class="btn btn-default">&nbsp;&nbsp;注&nbsp;&nbsp;册&nbsp;&nbsp;</button>
+
+						</div>
+					</div>
+				</form>
+			</div>
+			<div class="login-box">
+				<div class="blank-30"></div>
+				<form class="form-horizontal" method="post" id="loginForm" action="#">
+					<div class="form-group">
+						<label for="inputPassword3" class="col-sm-3 control-label">用户名</label>
+						<div class="col-sm-8">
+							<input type="text" name="username" class="form-control">
+						</div>
+					</div>
+					<div class="form-group">
+						<label for="inputPassword3" class="col-sm-3 control-label">密码</label>
+						<div class="col-sm-8">
+							<input type="password" name="password" class="form-control">
+						</div>
+					</div>
+
+					<div class="form-group">
+						<div class="col-sm-offset-4 col-sm-8">
+							<button type="submit" name="register" class="btn btn-default">&nbsp;&nbsp;登&nbsp;&nbsp;陆&nbsp;&nbsp;</button>
+
+						</div>
+					</div>
+				</form>
+			</div>
+		</div>
+
+		<script type="text/javascript">
+			$(document).ready(function() {
+				$('#registerForm').bootstrapValidator({
+					fields: {
+						nickname: {
+							validators: {
+								notEmpty: {
+									message: '昵称不能为空'
+								},
+								stringLength: {
+									min: 6,
+									max: 20,
+									message: '昵称长度保持在6-20'
+								},
+								regexp: {
+									regexp: /[\u4e00-\u9fa5a-zA-Z0-9]+$/,
+									message: "昵称不能包含特殊字符"
+								},
+							}
+						},
+						username: {
+							message: '用户名无效',
+							validators: {
+								notEmpty: {
+									message: '用户名不能为空'
+								},
+								stringLength: {
+									min: 6,
+									max: 20,
+									message: '用户名长度保持在6-20'
+								},
+								regexp: {
+									regexp: /^[a-zA-Z0-9]+$/,
+									message: "用户名只能是字母和数字"
+								},
+								remote: {
+									url: 'remote.php',
+									message: 'The username is not available'
+								}
+							}
+						},
+						password: {
+							validators: {
+								notEmpty: {
+									message: '密码不能为空'
+								},
+							}
+						},
+						confirmPassword: {
+							validators: {
+								notEmpty: {},
+								identical: {
+									field: 'password',
+									message: '请保持密码一致'
+								}
+							}
+						}
+					}
+				});
+			});
+		</script>
+		<!--//login-->
+
+		<!--//header-->		<!--search-scripts-->
+		<!--advertisement-->
+		<div class="add">
+			<div class="container">
+				<div class="add-top">
+					<div class="col-md-12 add-left">
+						<img src="images/gg.jpg" width="100%">
+					</div>
+
+					<div class="clearfix"></div>
+				</div>
+			</div>
+		</div>
+		<!--advertisement-->
+		
+		
+		<script src="js/classie.js"></script>
+		<!--//search-scripts-->
+		<!--blog-->
+		<div class="blog">
+			<div class="container">
+				<div class="blog-top">
+					<div class="col-md-8 blog-left">
+						<div class="blog-main">
+							<h1 class="bg">NEWS / 资讯</h1>
+							<div class="b-line1"></div>
+							</p>
+							<div class="blank-30"></div>
+                            <ul id="news_list_ul">
+                            	<li><label>·</label> <a href="#">违规违法违法程序为发违法违规俄方违反</a>
+                             <time>2014/10/01</time>
+                            	</li>
+                            		<li><label>·</label> <a href="#">违规违法违法程序为发违法违规俄方违反</a>
+                             <time>2014/10/01</time>
+                            	</li>
+                            		<li><label>·</label> <a href="#">违规违法违法程序为发违法违规俄方违反</a>
+                             <time>2014/10/01</time>
+                            	</li>
+                            		<li><label>·</label> <a href="#">违规违法违法程序为发违法违规俄方违反</a>
+                             <time>2014/10/01</time>
+                            	</li>
+                            		<li><label>·</label> <a href="#">违规违法违法程序为发违法违规俄方违反</a>
+                             <time>2014/10/01</time>
+                            	</li>
+                            		<li><label>·</label> <a href="#">违规违法违法程序为发违法违规俄方违反</a>
+                             <time>2014/10/01</time>
+                            	</li>
+                            		<li><label>·</label> <a href="#">违规违法违法程序为发违法违规俄方违反</a>
+                             <time>2014/10/01</time>
+                            	</li>
+                            		<li><label>·</label> <a href="#">违规违法违法程序为发违法违规俄方违反</a>
+                             <time>2014/10/01</time>
+                            	</li>
+                            		<li><label>·</label> <a href="#">违规违法违法程序为发违法违规俄方违反</a>
+                             <time>2014/10/01</time>
+                            	</li>
+                            		<li><label>·</label> <a href="#">违规违法违法程序为发违法违规俄方违反</a>
+                             <time>2014/10/01</time>
+                            	</li>
+                            		<li><label>·</label> <a href="#">违规违法违法程序为发违法违规俄方违反</a>
+                             <time>2014/10/01</time>
+                            	</li>
+                            		<li><label>·</label> <a href="#">违规违法违法程序为发违法违规俄方违反</a>
+                             <time>2014/10/01</time>
+                            	</li>
+                            		<li><label>·</label> <a href="#">违规违法违法程序为发违法违规俄方违反</a>
+                             <time>2014/10/01</time>
+                            	</li>
+                            		<li><label>·</label> <a href="#">违规违法违法程序为发违法违规俄方违反</a>
+                             <time>2014/10/01</time>
+                            	</li>
+                            </ul>							
+							
+							
+						</div>
+						
+						
+					</div>
+					<div class="col-md-4 blog-right">
+						<a href="#" id="right-fixed-node"></a>
+						<div class="categories" id="right-fixed">
+							<h3>ACTIVITY /  活动</h3>
+							<ul>
+								<li><a href="#">March 3014</a>
+								</li>
+								<li><a href="#">May 2014</a>
+								</li>
+								<li><a href="#">August 2014</a>
+								</li>
+								<li><a href="#">October 2014</a>
+								</li>
+							</ul>
+						</div>
+					</div>
+					<div class="clearfix"></div>
+				</div>
+			</div>
+		</div>
+		<script>
+			$(window).scroll(function() {
+				var off_top = $("#right-fixed-node").offset().top;
+				var s_top = $('body').scrollTop();
+				if(s_top>off_top){
+					$("#right-fixed").addClass('can-fixed')
+				}else{
+					$("#right-fixed").removeClass('can-fixed')
+				}
+			})
+		</script>
+		<div class="blank-30"></div>
+		<!--blog-->
+		<!--footer-->
+		<div class="footer">
+			<div class="container">
+				<div class="footer-top">
+					<div class="col-md-6 footer-left">
+						<p>Copyright &copy; 2015.Company name All rights reserved.<a target="_blank" href="http://www.cssmoban.com/">&#x7F51;&#x9875;&#x6A21;&#x677F;</a> - More Templates <a href="http://www.cssmoban.com/" target="_blank" title="模板之家">模板之家</a>
+						</p>
+					</div>
+					<div class="col-md-6 footer-right">
+						<a href="index.html">
+							<img src="images/lg.png" alt="" />
+						</a>
+					</div>
+					<div class="clearfix"></div>
+				</div>
+			</div>
+			<script type="text/javascript">
+				$(document).ready(function() {
+					/*
+										var defaults = {
+								  			containerID: 'toTop', // fading element id
+											containerHoverID: 'toTopHover', // fading element hover id
+											scrollSpeed: 1200,
+											easingType: 'linear' 
+								 		};
+					*/
+					$().UItoTop({
+						easingType: 'easeOutQuart'
+					});
+				});
+			</script>
+			<a href="#home" id="toTop" class="scroll" style="display: block;"> <span id="toTopHover" style="opacity: 1;"> </span>
+			</a>
+		</div>
+		<!--footer-->
+	</body>
+
+</html>
