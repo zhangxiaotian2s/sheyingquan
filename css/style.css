@@ -2310,3 +2310,5 @@ a.bg {
 
 #upimgbtn{ display: block;  width: 60%;  height: 44px; line-height: 44px; text-align: center; border-radius: 6px;  margin:  auto;} 
 .header-top .nav-login{ position: absolute; right:100px; } 
+
+.img_list_div div.building-left{ margin-bottom: 20px; }
