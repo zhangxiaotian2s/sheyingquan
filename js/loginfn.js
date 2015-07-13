@@ -51,6 +51,8 @@ quit_Btn.click(function() {
 	checkCookie();
 })
 
+//辅助css
+r_l_box.css("top",$('.header-top').height())
 
 function setBoxStaus() {
     r_l_box.addClass('hidden')
