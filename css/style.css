@@ -2293,7 +2293,7 @@ a.bg {
 #fx-tsina{background: #ec0a00 url(../images/xinlang.png) no-repeat 12px 9px;}
 #fx-douban{background: #00da00 url(../images/dou.png) no-repeat 12px 9px;}
 
-.r-l-box{  width: 300px; height: auto; background: #000000; position: absolute; right: 0px; top: 78px; opacity: 0.9; z-index: 1000;}  
+.r-l-box{  width: 300px; height: auto; background: #000000; position: absolute; right: 0px;  opacity: 0.9; z-index: 1000;}  
 .r-l-box .form-horizontal .control-label{ color: #FFFFFF; font-size: 0.8em; text-align:left;  margin-left: 10px; }
 .r-l-box .form-horizontal .form-group{  margin: 8px 0px;}
 .help-block{ color: #903b39; margin: 2px 0px;}

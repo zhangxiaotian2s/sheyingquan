@@ -52,7 +52,7 @@ quit_Btn.click(function() {
 })
 
 //辅助css
-r_l_box.css("top",$('.header-top').height(true))
+r_l_box.css("top",$('.header-top').outerHeight(true))
 
 function setBoxStaus() {
     r_l_box.addClass('hidden')
