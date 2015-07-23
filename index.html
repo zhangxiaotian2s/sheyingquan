@@ -19,7 +19,7 @@
 		<link href="css/bootstrap.css" rel='stylesheet' type='text/css' />
 		<link href="css/style.css" rel='stylesheet' type='text/css' />
 		<script src="js/jquery-1.11.0.min.js"></script>
-		<script type="text/javascript" src="js/bootstrap.min.js" ></script>
+		<script type="text/javascript" src="js/bootstrap.min.js"></script>
 		<script type="text/javascript" src="js/move-top.js"></script>
 		<script type="text/javascript" src="js/easing.js"></script>
 		<script type="text/javascript">
@@ -79,7 +79,7 @@
 						</li>
 					</ul>
 					<ul id="islogin_ul" class="hidden">
-						<li><a href="#"><span >zhgwegwe </span></a>
+						<li><a href="#"><span >zhgwegwe</span></a>
 						</li>
 						<li>|</li>
 						<li><a href="#"><span >退出登陆</span></a>
@@ -146,8 +146,8 @@
 		</div>
 		<!--login-->
 		<script type="text/javascript" src="js/bootstrapValidator.js"></script>
-		<div class="r-l-box hidden">
-			<div class="register-box ">
+		<div class="r-l-box  hidden">
+			<div class="register-box">
 				<div class="blank-30"></div>
 				<form class="form-horizontal" method="post" id="registerForm" action="#">
 					<div class="form-group">
@@ -177,7 +177,7 @@
 
 					<div class="form-group">
 						<div class="col-sm-offset-4 col-sm-8">
-							<button type="submit" name="register" class="btn btn-default">&nbsp;&nbsp;注&nbsp;&nbsp;册&nbsp;&nbsp;</button>
+							<button type="submit" id="register_Btn" class="btn btn-default">&nbsp;&nbsp;注&nbsp;&nbsp;册&nbsp;&nbsp;</button>
 
 						</div>
 					</div>
@@ -201,7 +201,7 @@
 
 					<div class="form-group">
 						<div class="col-sm-offset-4 col-sm-8">
-							<button type="submit" name="register" class="btn btn-default">&nbsp;&nbsp;登&nbsp;&nbsp;陆&nbsp;&nbsp;</button>
+							<button type="submit" id="login_Btn" class="btn btn-default">&nbsp;&nbsp;登&nbsp;&nbsp;陆&nbsp;&nbsp;</button>
 
 						</div>
 					</div>
@@ -246,7 +246,7 @@
 								},
 								remote: {
 									url: 'remote.php',
-									message: 'The username is not available'
+									message: '用户名已经存在'
 								}
 							}
 						},
@@ -259,7 +259,9 @@
 						},
 						confirmPassword: {
 							validators: {
-								notEmpty: {},
+								notEmpty: {
+									message: '密码不能为空'
+								},
 								identical: {
 									field: 'password',
 									message: '请保持密码一致'
@@ -268,6 +270,49 @@
 						}
 					}
 				});
+				$('#register_Btn').click(function() {
+					$.ajax({
+						type: "get",
+						url: "",
+						data: {
+							nicheng: $("#registerForm input[name='nickname']").val(),
+							username: $("#registerForm input[name='username']").val(),
+							password: $("#registerForm input[name='password']").val()
+						},
+						async: true,
+						beforeSend:function(){
+							$('#registerForm').bootstrapValidator('validate')
+						},
+						success: function(data) {
+							if (data == true) {
+							   alert("注册成功！")
+							}
+						},
+						error: function() {
+							alert("注册失败")
+						}
+					});
+					
+				})
+				$('#login_Btn').click(function(){
+					$.ajax({
+						type:"post",
+						url:"",
+						data:{
+						 username:$("#loginForm input[name='username']").val(),
+						 password:$("#loginForm input[name='password']").val()
+						},
+						async:true,
+						success:function(data){
+							if(data==true){
+								alert(登陆成功)
+								$("#login_ul").hide();
+								$('#islogin_ul>li').eq(0).find("span").text(username);
+								$('#islogin_ul').show();
+							}
+						}
+					});
+				})
 			});
 		</script>
 		<!--//login-->
@@ -280,7 +325,7 @@
 		<!--banner-->
 		<div class="copyrights">Collect from <a href="http://www.cssmoban.com/">免费模板</a>
 		</div>
-		<div class="banner">
+		<div class="banner" style="background-image:url(images/banner.jpg) ;">
 			<div class="container">
 				<div class="banner-top">
 					<h1>WELCOME TO JOIN CHINA PHOTOGRAPHY CIRCLE</h1>
