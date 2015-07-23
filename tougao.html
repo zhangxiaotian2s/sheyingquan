@@ -99,7 +99,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 			</div>
 			<div class="header-info-right">
 				<div class="header cbp-spmenu-push">
-				<nav class="cbp-spmenu cbp-spmenu-vertical cbp-spmenu-left" id="cbp-spmenu-s1">
+					<nav class="cbp-spmenu cbp-spmenu-vertical cbp-spmenu-left" id="cbp-spmenu-s1">
 						<a href="index.html">HOME / 首 页 </a>
 						<a href="news_list.html">NEWS / 资 讯</a>
 						<a href="img_list.html">SHOW / 影 展</a>
@@ -299,24 +299,41 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 					})
 					 $('#upfile_input').change(function() {
 						var imgsrc = $(this).val();
-						var sp_arr=imgsrc.split('.');
-						var endmark=sp_arr[sp_arr.length-1];
-						console.log(endmark)
-						if(!/(gif|jpg|jpeg|png|GIF|JPG|PNG)$/.test(endmark)){
+						var sp_arr = imgsrc.split('.');
+						var endmark = sp_arr[sp_arr.length - 1];
+						if (!/(gif|jpg|jpeg|png|GIF|JPG|PNG)$/.test(endmark)) {
 							alert("请上传图片格式文件")
-						}else{
-							$('#upimgform').submit()
+						} else {
+							$.ajax({
+								type: "get",
+								url: "",
+								data: imgsrc,
+								async: true,
+								success: function(data) {
+									if (data == "success") {
+										var dataurl = "images/art-6.jpg";
+										var img = document.createElement('img')
+										img.src = dataurl
+										img.onload = function() {
+											var html = ''
+											html += '<div class="col-md-3 related-left"><div class="portfolio app mix_all" data-cat="app" style="display:inline-block;opacity:1"><div class="portfolio-wrapper">'
+											html += ' <a href=' + dataurl + ' class="b-link-stripe b-animate-go swipebox" title="Image Title"><img src=' + dataurl + '>'
+											html += '<div class="b-wrapper"><h2 class="b-animate b-from-left b-delay03"><span class="one"></span></h2></div></a></div></div></div>'
+											$('#myupload_list').prepend(html)
+										}
+									}
+								}
+							});
 						}
 					})
 				</script>
 				<div class="related">
-
 					<h3>&nbsp;&nbsp; UPLOAD /我的上传</h3>
-					<div class="related-bottom my_upload">
+					<div class="related-bottom my_upload" id="myupload_list">
 						<div class="col-md-3 related-left">
 							<div class="portfolio app mix_all" data-cat="app" style="display: inline-block; opacity: 1;">
 								<div class="portfolio-wrapper">
-									<a href="images/r-1.jpg" class="b-link-stripe b-animate-go   swipebox" title="Image Title">
+									<a href="images/art-2.jpg" class="b-link-stripe b-animate-go   swipebox" title="Image Title">
 										<img src="images/art-2.jpg" />
 										<div class="b-wrapper">
 											<h2 class="b-animate b-from-left    b-delay03 ">
@@ -352,7 +369,6 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 										<img src="images/r-2.jpg" />
 										<div class="b-wrapper">
 											<h2 class="b-animate b-from-left    b-delay03 ">
-
 								     	            <span class="one"></span>
 
 								                 	</h2>
